@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1ae7gc-b0lsln)*8ib#%qzkyuju_9+x56=om#%a!)+^g!l)a+p'
+SECRET_KEY = '=32k+0-=0t7c1y8d25iole&uh-me$pew*h6sads2&e)gmv@pb8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'smb.apps.SmbConfig',
+    'merchandiser.apps.MerchandiserConfig',
+    'homepage.apps.HomepageConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,7 +56,8 @@ ROOT_URLCONF = 'smb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r'C:\Users\88019\Desktop\smb\smb\templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        ,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,8 +80,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-       # 'NAME': 'smb'
-
     }
 }
 
@@ -120,6 +120,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'smb/static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 STATIC_URL = '/static/'
